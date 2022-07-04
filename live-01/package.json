@@ -2,11 +2,15 @@
   "name": "ms-autentication",
   "version": "1.0.0",
   "description": "Microservice criado durante curso do DIO",
-  "main": "index.js",
+  "main": "./dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./index.js"
+    "start": "node ./",
+    "build": "tsc -p ."
   },
   "author": "OrlandoSD",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^18.0.1"
+  }
 }
