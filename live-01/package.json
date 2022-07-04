@@ -1,0 +1,12 @@
+{
+  "name": "ms-autentication",
+  "version": "1.0.0",
+  "description": "Microservice criado durante curso do DIO",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./index.js"
+  },
+  "author": "OrlandoSD",
+  "license": "ISC"
+}
