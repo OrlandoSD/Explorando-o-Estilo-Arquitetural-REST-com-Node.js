@@ -1,0 +1,16 @@
+{
+  "name": "live-03",
+  "version": "1.0.0",
+  "description": "Microserviço de autenticação com Nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "OrlandoSD",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.18.1",
+    "tsc": "^2.0.4",
+    "tsconfig.json": "^1.0.11"
+  }
+}
