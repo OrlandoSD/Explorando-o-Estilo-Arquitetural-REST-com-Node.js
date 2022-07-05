@@ -7,12 +7,10 @@ app.use(express.json);
 app.use(express.urlencoded({ extended:true}));
 
 // Configuração de rotas
+app.use(statusRoute);
 app.use(usersRoute);
 
-app.get('/status', (req: Request, res: Response, next: NextFunction) => {
-    res.status(200).send({foo:'Sucesso Total!'});
 
-});
 
 // inicialização do servidor
 app.listen(3000, () => {
