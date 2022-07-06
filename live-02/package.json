@@ -1,7 +1,7 @@
 {
   "name": "ms-authentication",
   "version": "1.0.0",
-  "description": "Microservice criado durante o live code com o pessoal da DIO",
+  "description": "Microservice criado durante o live code com o pessoal da DIO - Node.js com Banco de Dados Relacionais(SQL)",
   "main": "./dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
