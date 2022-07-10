@@ -12,8 +12,13 @@ app.use(express.urlencoded({ extended: true }));
 
 // Configurações de Rotas
 app.use(statusRoute);
-app.use(jwtAthenticationMiddleware, usersRoute);
 app.use(authorizationRoute);
+
+
+app.use(jwtAthenticationMiddleware);
+app.use(usersRoute);
+app.use(productsRoute);
+
 
 // Configuração dos Handlers de Erro
 app.use(errorHandler);

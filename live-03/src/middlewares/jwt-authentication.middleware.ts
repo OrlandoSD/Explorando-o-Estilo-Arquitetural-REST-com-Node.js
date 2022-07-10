@@ -1,11 +1,12 @@
 import { Request, Response, NextFunction } from "express";
 import ForbiddenError from "../models/errors/forbidden.error.model";
 import JWT from 'jsonwebtoken';
+import User from '../models/user.model';
 import userRepository from '../repositories/user.repository';
 
 
 
-async function jwtAuthenticationMiddleware(req:Request, res: Response, next: NextFunction){
+async function jwtAuthenticationMiddleware (req:Request, res: Response, next: NextFunction){
     try{
 
        const authorizationHeader =  req.headers['authentication'];
@@ -20,18 +21,25 @@ async function jwtAuthenticationMiddleware(req:Request, res: Response, next: Nex
         throw new ForbiddenError('Tipo de autenticação inválido');
        }
 
-       const tokenPayload = JWT.verify(token, 'my_secret_key');
+       try{
+    
+        const tokenPayload = JWT.verify(token, 'my_secret_key');
      
-       if(typeof tokenPayload !== 'object' || !tokenPayload.sub){
-        throw new ForbiddenError('Token inválido');
+        if(typeof tokenPayload !== 'object' || !tokenPayload.sub){
+        
+        }
+        
+        const user ={
+         uuid: tokenPayload.sub,
+         username: tokenPayload.username
+        };
+
+        req.user = user;
+        next();
+       }catch(error){
+        throw new ForbiddenError('Token Inválido');
        }
-       
-       const user ={
-        uuid: tokenPayload.sub,
-        username: tokenPayload.username
-       };
-       req.user = user;
-       next();
+    
     }catch(error){
         next(error)
 
